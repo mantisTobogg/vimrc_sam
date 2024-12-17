@@ -132,7 +132,7 @@ let g:lightline = {
       \   'right': [ [ 'lineinfo' ], ['percent'] ]
       \ },
       \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"ð":""}',
       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
       \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
       \ },
@@ -193,3 +193,15 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " Copy the link to the line of a Git repository to the clipboard
 nnoremap <leader>v :.GBrowse!<CR>
 xnoremap <leader>v :GBrowse!<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => coc.nvim (Autocompletion and Suggestions)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+call plug#begin('~/.vim/plugged')
+
+" Install coc.nvim for autocompletion and language server support
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
+
